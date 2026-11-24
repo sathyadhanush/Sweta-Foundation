@@ -1,0 +1,31 @@
+@media (max-width: 390px) {
+  .container {
+    width: min(100% - 1.5rem, var(--container));
+  }
+
+  .home-hero h1,
+  .page-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .brand__name {
+    font-size: 0.95rem;
+  }
+
+  .brand__tagline {
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .home-hero__media,
+  .page-hero__media {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --container: 1200px;
+  }
+}
