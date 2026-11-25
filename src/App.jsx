@@ -1,21 +1,23 @@
 import { useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Navigate, Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import AnimalWelfare from './pages/AnimalWelfare'
-import AnimalProtection from './pages/AnimalProtection'
-import ChildrenEducation from './pages/ChildrenEducation'
-import About from './pages/About'
-import Activities from './pages/Activities'
-import Contact from './pages/Contact'
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    if (hash) return
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' in window ? 'instant' : 'auto' })
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) {
+        requestAnimationFrame(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        })
+      }
+      return
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   }, [pathname, hash])
 
   return null
@@ -29,12 +31,12 @@ export default function App() {
       <main className="page">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/animal-welfare" element={<AnimalWelfare />} />
-          <Route path="/animal-protection" element={<AnimalProtection />} />
-          <Route path="/childrens-education" element={<ChildrenEducation />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/activities" element={<Activities />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<Navigate to="/#about" replace />} />
+          <Route path="/activities" element={<Navigate to="/#activities" replace />} />
+          <Route path="/contact" element={<Navigate to="/#contact" replace />} />
+          <Route path="/animal-welfare" element={<Navigate to="/#hospitals-shelters" replace />} />
+          <Route path="/animal-protection" element={<Navigate to="/#rescue" replace />} />
+          <Route path="/childrens-education" element={<Navigate to="/#community-education" replace />} />
         </Routes>
       </main>
       <Footer />

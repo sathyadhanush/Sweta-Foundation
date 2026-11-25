@@ -9,7 +9,8 @@
   }
 
   .brand__name {
-    font-size: 0.95rem;
+    font-size: 0.64rem;
+    max-width: 9.2rem;
   }
 
   .brand__tagline {

@@ -207,6 +207,28 @@
   color: var(--green-dark);
 }
 
+.activity-card__media--pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  aspect-ratio: auto;
+}
+
+.activity-card__media--pair img {
+  aspect-ratio: 4 / 3;
+  height: 100%;
+}
+
+.image-caption {
+  margin-top: 0.85rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  color: var(--green-deeper);
+  text-transform: uppercase;
+}
+
 /* Mission / about split */
 .split-block__copy h2 {
   font-size: clamp(1.6rem, 3vw, 2.2rem);

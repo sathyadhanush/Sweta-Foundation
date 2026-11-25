@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { HeartHandshake, Menu, X } from 'lucide-react'
 import { navLinks, siteConfig } from '../data/websiteContent'
 
@@ -9,7 +9,7 @@ export default function Header() {
 
   useEffect(() => {
     setOpen(false)
-  }, [location.pathname])
+  }, [location.pathname, location.hash])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <Link to="/" className="brand" aria-label="Sweta Foundation home">
+        <Link to="/" className="brand" aria-label="DAVALURI SWETA FOUNDATION home">
           <span className="brand__mark" aria-hidden="true">
             <HeartHandshake size={22} />
           </span>
@@ -33,22 +33,19 @@ export default function Header() {
 
         <nav className="nav-desktop" aria-label="Primary">
           {navLinks.map((link) => (
-            <NavLink
+            <Link
               key={link.path}
               to={link.path}
-              className={({ isActive }) => (isActive ? 'active' : undefined)}
-              end={link.path === '/'}
+              className={
+                location.hash && link.path === `/${location.hash}` ? 'active' : undefined
+              }
             >
               {link.label}
-            </NavLink>
+            </Link>
           ))}
         </nav>
 
         <div className="header-actions">
-          <Link to={siteConfig.donateUrl} className="btn-donate">
-            <span className="btn-donate__full">Donate / Support Us</span>
-            <span className="btn-donate__short">Donate</span>
-          </Link>
           <button
             type="button"
             className="menu-toggle"
@@ -70,26 +67,19 @@ export default function Header() {
         <div className="mobile-nav__panel">
           <nav aria-label="Mobile">
             {navLinks.map((link) => (
-              <NavLink
+              <Link
                 key={link.path}
                 to={link.path}
-                className={({ isActive }) => (isActive ? 'active' : undefined)}
-                end={link.path === '/'}
+                className={
+                  location.hash && link.path === `/${location.hash}` ? 'active' : undefined
+                }
                 onClick={() => setOpen(false)}
                 tabIndex={open ? 0 : -1}
               >
                 {link.label}
-              </NavLink>
+              </Link>
             ))}
           </nav>
-          <Link
-            to={siteConfig.donateUrl}
-            className="btn btn--primary mobile-nav__donate"
-            onClick={() => setOpen(false)}
-            tabIndex={open ? 0 : -1}
-          >
-            {siteConfig.donateLabel}
-          </Link>
         </div>
       </div>
     </header>

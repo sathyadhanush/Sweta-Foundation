@@ -1,19 +1,26 @@
-import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
 import Reveal from './Reveal'
 
-export default function ActivityCard({ title, short, image, imageAlt, path }) {
+export default function ActivityCard({ id, title, short, image, images, imageAlt }) {
+  const photos = images?.length ? images : image ? [image] : []
+
   return (
-    <Reveal as="article" className="activity-card">
-      <div className="activity-card__media">
-        <img src={image} alt={imageAlt || title} loading="lazy" />
-      </div>
+    <Reveal
+      as="article"
+      id={id}
+      className={`activity-card${photos.length ? '' : ' activity-card--text'}`}
+    >
+      {photos.length ? (
+        <div
+          className={`activity-card__media${photos.length > 1 ? ' activity-card__media--pair' : ''}`}
+        >
+          {photos.map((src) => (
+            <img key={src} src={src} alt={imageAlt || title} loading="lazy" />
+          ))}
+        </div>
+      ) : null}
       <div className="activity-card__body">
         <h3>{title}</h3>
         <p>{short}</p>
-        <Link to={path} className="activity-card__link">
-          Learn More <ArrowRight size={16} />
-        </Link>
       </div>
     </Reveal>
   )

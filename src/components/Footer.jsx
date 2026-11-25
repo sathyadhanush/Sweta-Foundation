@@ -3,7 +3,7 @@ import { footerContent, siteConfig } from '../data/websiteContent'
 
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" id="contact">
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h3>Our Services</h3>
+            <h3>Services</h3>
             <ul>
               {footerContent.services.map((item) => (
                 <li key={item.path + item.label}>
@@ -48,7 +48,6 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <p>{siteConfig.copyright}</p>
-          <p className="footer-note">{footerContent.establishedNote}</p>
         </div>
       </div>
     </footer>
