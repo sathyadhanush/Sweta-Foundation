@@ -19,8 +19,8 @@ export const siteConfig = {
 }
 
 export const images = {
-  hero: img('Rescue and Rehab 1.png'),
-  shelter: img('Rescue and Rehab 2.png'),
+  hero: img('Home page image.png'),
+  shelter: img('Rescue and Rehab 1.png'),
   mission: img('Education 1.png'),
   hospital: img('Pet clinick 1.png'),
   diagnostic: img('Pet clinic 2.png'),
