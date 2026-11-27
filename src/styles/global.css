@@ -269,6 +269,13 @@ h4 {
   gap: 1.5rem;
 }
 
+.activity-grid {
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  grid-template-columns: minmax(0, 420px);
+}
+
 @media (min-width: 768px) {
   .grid-2 {
     grid-template-columns: 1fr 1fr;
@@ -276,6 +283,10 @@ h4 {
 
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .activity-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 380px));
   }
 }
 

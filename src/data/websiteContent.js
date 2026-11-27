@@ -11,7 +11,8 @@ export const siteConfig = {
   copyright: '© 2026 DAVALURI SWETA FOUNDATION. All rights reserved.',
   contact: {
     addressLines: [
-      'No.7/4 Kamalabai Street,',
+      '84/90, 4th Floor,',
+      'G.N.Chetty Road,',
       'T.Nagar, Chennai 600017,',
       'Tamil Nadu, India.',
     ],
@@ -23,10 +24,10 @@ export const images = {
   shelter: img('Rescue and Rehab 1.png'),
   mission: img('Education 1.png'),
   hospital: img('Pet clinick 1.png'),
-  diagnostic: img('Pet clinic 2.png'),
-  rescue: img('Rescue and Rehab 1.png'),
+  rescue: img('WhatsApp Image 2026-11-27 at 8.28.19 PM.jpeg'),
   education: img('Education 2.png'),
-  vaccination: img('Pet clinic 2.png'),
+  vaccination: img('WhatsApp Image 2026-11-27 at 7.52.22 PM.jpeg'),
+  advocacy: img('WhatsApp Image 2026-11-27 at 8.08.19 PM.jpeg'),
 }
 
 export const navLinks = [
@@ -86,7 +87,7 @@ export const homeContent = {
     eyebrow: 'OUR ACTIVITIES',
     title: 'Comprehensive Programs for Animal Welfare & Education',
     description:
-      'Davaluri Sweta Foundation works on a wide range of initiatives including animal welfare, rescue operations, diagnostic services, and educational support to benefit all communities.',
+      'Davaluri Sweta Foundation works on a wide range of initiatives including animal welfare, rescue operations, and educational support to benefit all communities.',
   },
   cta: {
     title: 'Get Involved',
@@ -110,20 +111,12 @@ export const activities = [
     imageAlt: 'Veterinarians examining a dog in a pet clinic',
   },
   {
-    id: 'diagnostics',
-    title: 'Advanced Diagnostic Services',
-    short:
-      'We provide comprehensive diagnostic services including X-Ray, CT-Scan, MRI-Scan, and Intensive Care Units (ICUs) for small animals, pets, and cats requiring advanced medical treatment.',
-    image: images.diagnostic,
-    imageAlt: 'A veterinary team treating a dog in a clinic',
-  },
-  {
     id: 'rescue',
     title: 'Rescue & Rehabilitation',
     short:
       'We operate animal rescue services including computerized ambulance and helpline, provide medical aid, veterinary services, and facilitate adoption and rehoming of abandoned and rehabilitated animals.',
     image: images.rescue,
-    imageAlt: 'Rescuers caring for an injured dog during rehabilitation',
+    imageAlt: 'Rescue team moving an injured dog on a stretcher beside the animal rescue ambulance',
   },
 ]
 
@@ -134,7 +127,7 @@ export const workingAreas = [
     short:
       'We conduct Animal Birth Control (ABC) and Anti-Rabies Vaccination (ARV) programs for stray animal populations to prevent overpopulation and rabies, along with mobile dispensaries and medical camps.',
     image: images.vaccination,
-    imageAlt: 'Veterinary care for a dog at the clinic',
+    imageAlt: 'Veterinarians giving a dog an injection at an animal birth control and vaccination camp',
   },
   {
     id: 'community-education',
@@ -149,6 +142,8 @@ export const workingAreas = [
     title: 'Advocacy & Legal Support',
     short:
       'We advocate for stronger animal protection laws, coordinate with government bodies and judicial departments, and work to prevent unnecessary pain or suffering to animals through legal and policy initiatives.',
+    image: images.advocacy,
+    imageAlt: 'A dog, cat, parrot, and rabbit sitting together',
   },
 ]
 
@@ -163,7 +158,6 @@ export const footerContent = {
   ],
   services: [
     { label: 'Animal Care & Shelters', path: '/#hospitals-shelters' },
-    { label: 'Diagnostic Services', path: '/#diagnostics' },
     { label: 'Rescue & Rehabilitation', path: '/#rescue' },
     { label: 'Educational Support', path: '/#community-education' },
     { label: 'Community Programs', path: '/#community-education' },

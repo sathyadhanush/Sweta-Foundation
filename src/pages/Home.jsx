@@ -97,7 +97,7 @@ export default function Home() {
             <h2 className="section-title">{activitiesIntro.title}</h2>
             <p className="section-lead">{activitiesIntro.description}</p>
           </Reveal>
-          <div className="grid-3">
+          <div className="activity-grid">
             {activities.map((item) => (
               <ActivityCard key={item.id} {...item} />
             ))}
